@@ -53,56 +53,41 @@ body {
     margin-bottom: 2rem;
 }
 
-.utensil-icon {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    margin: 0 auto;
+.food-icons {
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 0 auto;
 }
 
-.fork, .knife {
-    position: absolute;
-    background-color: var(--dark-brown);
-    border-radius: 2px;
+.food-icons i {
+    font-size: 2.5rem;
+    color: var(--dark-brown);
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.fork {
-    width: 6px;
-    height: 60px;
-    left: 30px;
-    bottom: 0;
+.food-icons i:nth-child(1) {
+    animation: bounce 2s infinite 0.2s;
 }
 
-.fork::before {
-    content: '';
-    position: absolute;
-    width: 30px;
-    height: 20px;
-    border-left: 6px solid var(--dark-brown);
-    border-right: 6px solid var(--dark-brown);
-    top: -15px;
-    left: -12px;
+.food-icons i:nth-child(2) {
+    font-size: 3rem;
+    color: var(--primary-red);
+    animation: bounce 2s infinite 0.4s;
 }
 
-.knife {
-    width: 6px;
-    height: 60px;
-    right: 30px;
-    bottom: 0;
-    transform: rotate(5deg);
+.food-icons i:nth-child(3) {
+    animation: bounce 2s infinite 0.6s;
 }
 
-.knife::before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 30px;
-    background-color: var(--dark-brown);
-    top: -15px;
-    left: -7px;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 70%, 0 100%);
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 h1 {
@@ -132,12 +117,24 @@ p {
     margin-bottom: 2rem;
 }
 
+.construction-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem auto 0;
+}
+
+.construction-wrapper i {
+    color: var(--secondary-orange);
+    font-size: 1.2rem;
+}
+
 .construction-bar {
-    width: 80%;
+    width: 60%;
     height: 10px;
     background-color: rgba(239, 107, 25, 0.2);
     border-radius: 5px;
-    margin: 2rem auto 0;
     overflow: hidden;
 }
 
@@ -182,12 +179,11 @@ p {
         font-size: 2rem;
     }
     
-    .utensil-icon {
-        width: 60px;
-        height: 60px;
+    .food-icons i {
+        font-size: 2rem;
     }
     
-    .fork, .knife {
-        height: 45px;
+    .food-icons i:nth-child(2) {
+        font-size: 2.5rem;
     }
 }
